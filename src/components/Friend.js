@@ -3,7 +3,7 @@ import PetsList from './PetsList'
 
 export default function Friend(props) {
   // 👉 1- What does a Friend need?
-  const { friendData } = props
+  const { friendData, changeStatus } = props
   console.log(friendData)
   return (
     <div className='friend-friends container'>
@@ -13,7 +13,7 @@ export default function Friend(props) {
           <h3>Name: {friendData.name}</h3>
           <p>Age: {friendData.age}</p>
 
-          <p>Married: {friendData.married ? 'Yes' : 'No'} <button>change</button></p>
+          <p>Married: {friendData.married ? 'Yes' : 'No'} <button onClick={() => changeStatus(friendData.id)}>change</button></p>
           <div>Likes:
             <ul>
               {/* 👉 3- Loop over the friend's hobbies and generate <li/> elements as you go */}
